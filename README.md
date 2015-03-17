@@ -2,7 +2,7 @@
 WebView Intro (Splash Screen)
 
 Screen shot :
-![Screen shot](http://applusform.github.io/webViewIntro/screenShot.png)
+![Screen shot](http://applusform.github.io/webViewIntro/screenshot.png)
 
 -
 ##### How to test this?
