@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Created by ApplusForm.com on 2015.03.17
+
+	Permission is granted to copy, distribute, modify under the terms of ApplusForm License.
+
+	Copyright (C) 2015 ApplusForm.com. All rights reserved.
+-->
+<MOML version="1.1.5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.applusform.com/xsd/moml_ui.xsd">
+	<UILAYOUT portrait="720,1230" landscape="720,1230">
+		<AGATEWEBVIEW id="webView" layout="0,0,720,1230" controls="none" supportZoom="true" src="http://google.com/+google" >
+			<LINKMAP>
+				<LINK url="*" delay="1" onFinish="function.hideIntro"/>
+			</LINKMAP>
+		</AGATEWEBVIEW>
+		<WINDOW id="intro" layout="0,0,720,1230" defaultImg="#fe000000"> <!-- alpha color is needed for android webview rendering -->
+			<WINDOW layout="0,0,720,1230" defaultImg="logo.png" loadingEffect="fadeIn" />
+			<LABEL id="loading" layout="0,1100,720,auto" text="Loading..." fontSize="6pt" textColor="#cccccc" textAlign="hCenter"/>
+		</WINDOW>
+	</UILAYOUT>
+
+	<CMD cmd="animation.show('loading', 'fade', 'roundTrip3', 10000, '')" />
+	<FUNCTION id="hideIntro">
+		<RETURN condition="intro.visible == 'invisible'"/>
+		<CMD cmd="animation.hide('intro', 'fade', '', 300, '')" delay="2000"/>
+	</FUNCTION>
+</MOML>
